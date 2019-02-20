@@ -51,6 +51,8 @@ If your build was not successful, please search on the Aeon GitHub bug list to s
 
 If your build of the binaries was successful, we need to test them. Each candidate needs testing for all possible functions. Of course, not everyone can test every command and every little detail, so we suggest at least testing the following on your desired OS and report back the findings. 
 
+When successfully run, check the version and verify to the PR that the version in the CLI or Daemon matches the latest commit in the list of commits. You verify this by entering ``version`` in the cli and it will post something like this ``Aeon 'Sophia' (v0.12.8.0-master-7c1d244f)`` where ``7c1d244`` is the latest commit for [PR 99](https://github.com/aeonix/aeon/pull/99) as of this writing. 
+
 ```
 After successful completion, please test the following:
 1 – Do the executables open properly?
