@@ -9,15 +9,13 @@ The purpose of Pull Request (PR) testing is to find, if any, pre-merge issues wi
 1.	Create a new folder and pull the latest PR from the Aeonix GitHub repo:
 i.	“ git clone --recursive https://github.com/aeonix/aeon ”
 2.	Move to the Aeon folder and fetch the PR you are testing:
-i.	“ cd aeon && git fetch origin pull/93/head:PR-93 ”
+i.	“ cd aeon && git fetch origin pull/106/head:PR-106 ”
 3.	Checkout the PR you are testing:
-i.	“ git checkout PR-93 ”
-4.	Update the modules for that PR:
-i.	“ git submodule init && git submodule update ”
-5.	Build the PR candidate
-i.	“ make release-static ” 
+i.	“ git checkout PR-106 ”
+4.	Build the PR candidate
+i.	“ make release-static ”  or if on windows ” make release-static-win64 ”
 ```
-
+Note: always follow the latest build instructions on the Aeon ReadMe.md on the official repo [here](https://github.com/aeonix/aeon#compiling-aeon-from-source)
 
 ## 2.	RELEASE CANDIDATE BUILDING:
 
@@ -25,10 +23,12 @@ i.	“ make release-static ”
 1.	Create a new folder and pull the latest PR from the Aeonix GitHub repo:
 i.	“ git clone --recursive https://github.com/aeonix/aeon ”
 2.	Move to the Aeon folder update the modules:
-i.	“ cd aeon && git submodule init && git submodule update ”
+i.	“ cd aeon && git checkout v0.12.9.0-aeon “
 3.	Build the release candidate:
-i.	“ make release-static ”
+i.	“ make release-static ”  or if on windows ” make release-static-win64 ”
 ```
+
+Note: always follow the latest build instructions on the Aeon ReadMe.md on the official repo [here](https://github.com/aeonix/aeon#compiling-aeon-from-source)
 
 If the CLI builds properly, you should be left with the following binaries in your build folder as noted on the command prompt after successful completion:
 
@@ -52,6 +52,8 @@ If your build was not successful, please search on the Aeon GitHub bug list to s
 If your build of the binaries was successful, we need to test them. Each candidate needs testing for all possible functions. Of course, not everyone can test every command and every little detail, so we suggest at least testing the following on your desired OS and report back the findings. 
 
 When successfully run, check the version and verify to the PR that the version in the CLI or Daemon matches the latest commit in the list of commits. You verify this by entering ``version`` in the cli and it will post something like this ``Aeon 'Sophia' (v0.12.8.0-master-7c1d244f)`` where ``7c1d244`` is the latest commit for [PR 99](https://github.com/aeonix/aeon/pull/99) as of this writing. 
+
+You can also check the Version.cpp file and it will show the build version as well. 
 
 ```
 After successful completion, please test the following:
